@@ -14,5 +14,5 @@ public interface OrganizationServiceImpl {
 
     void update(Long id, OrganizationRequest organizationRequest);
 
-    void delete(Long id);
+   void delete(Long id);
 }

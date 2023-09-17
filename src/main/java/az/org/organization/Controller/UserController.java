@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/t1/api1")
+@RequestMapping("/v2/api")
 @RequiredArgsConstructor
 public class UserController {
 
@@ -31,11 +31,12 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public void update1(@PathVariable Long id,@RequestBody UserRequest userRequest){
-        userService.update1(id,userRequest);
+    public void update1(@PathVariable Long id, @RequestBody UserRequest userRequest) {
+        userService.update1(id, userRequest);
     }
+
     @DeleteMapping("/{id}")
-    public void delete1(@PathVariable Long id){
+    public void delete1(@PathVariable Long id) {
         userService.delete1(id);
     }
 }

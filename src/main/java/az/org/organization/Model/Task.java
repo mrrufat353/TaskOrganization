@@ -10,12 +10,17 @@ import java.time.LocalDate;
 @RequiredArgsConstructor
 @Table(name = "tasks")
 public class Task {
+
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private  Long id;
+
     private  String name;
+
     Enum<Status> statusEnum;
+
     private LocalDate deadline;
+
     private String description;
 
 }

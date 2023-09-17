@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class UserService implements UserServiceImpl{
+public class UserService implements UserServiceImpl {
     private final ModelMapper modelMapper;
     private final UserRepository userRepository;
 
@@ -23,26 +23,26 @@ public class UserService implements UserServiceImpl{
         return userRepository
                 .findAll()
                 .stream()
-                .map(user -> modelMapper.map(user,UserResponse.class))
+                .map(user -> modelMapper.map(user, UserResponse.class))
                 .collect(Collectors.toList());
 
     }
 
     @Override
     public void CreateUser(UserRequest userRequest) {
-        User user = modelMapper.map(userRequest,User.class);
+        User user = modelMapper.map(userRequest, User.class);
         userRepository.save(user);
     }
 
     @Override
     public UserResponse getUserId(Long id) {
-        User user = userRepository.findById(id).orElseThrow(()->new RuntimeException());
-        return modelMapper.map(user,UserResponse.class);
+        User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException());
+        return modelMapper.map(user, UserResponse.class);
     }
 
     @Override
     public void update1(Long id, UserRequest userRequest) {
-        User user = modelMapper.map(userRequest,User.class);
+        User user = modelMapper.map(userRequest, User.class);
         userRepository.save(user);
     }
 

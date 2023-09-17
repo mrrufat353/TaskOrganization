@@ -1,20 +1,23 @@
 package az.org.organization.Dto;
 
+import az.org.organization.Model.Status;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.time.LocalDate;
 
 @Data
-public class OrganizationResponse {
+public class TaskResponse {
 
     private Long id;
 
-    private String holdingName;
+    private String name;
+
+    Enum<Status> statusEnum;
 
     @JsonFormat(pattern = "dd.MM.yyyy")
-    private LocalDate startYear;
+    private LocalDate deadline;
 
-    private Integer workers;
+    private String description;
 
 }
