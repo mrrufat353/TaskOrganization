@@ -8,6 +8,17 @@ services:
       - '1353:3306'
     volumes:
       - my-db:/var/lib/mysql
+
+  application:
+    image: ms20:v6
+    depends_on:
+      - DB
+    environment:
+      DB_HOSTNAME: DB
+      DB_PORT: 3306
+
+
+
   adminer:
     image: dockette/adminer:full-php5
     ports:
