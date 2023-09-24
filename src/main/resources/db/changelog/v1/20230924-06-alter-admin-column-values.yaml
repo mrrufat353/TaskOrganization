@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20230924-06
+      author: mrrufat353
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: name
+                  value: admin
+              - column:
+                  name: fin_code
+                  value: S6R75YR
+              - column:
+                  name: password
+                  value: koduqirma1234

@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20230920-01
+      author: mrrufat353
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: users_pkey
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: mail
+                  type: VARCHAR(255)
+              - column:
+                  name: password
+                  type: VARCHAR(255)
+
+
+
+
+
+
+
+
+
+
+
